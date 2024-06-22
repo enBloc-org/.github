@@ -5,35 +5,14 @@ on:
     types: [unassigned]
 
 jobs:
-  move-issue-to-backlog:
+  mark-unassigned-issues-backlog:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Move unassigned issue to backlog
-        id: move_issue
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const issue_number = context.issue.number;
-            const project_id = 6; // Replace with your actual project ID
-            const column_name = 'Backlog';
-
-            // Get the project columns
-            const projectColumns = await github.rest.projects.listColumns({
-              project_id: project_id
-            });
-
-            const backlogColumn = projectColumns.data.find(column => column.name === column_name);
-            if (!backlogColumn) {
-              throw new Error(`Could not find column: ${column_name}`);
-            }
-
-            // Add the issue to the project column
-            await github.rest.projects.createCard({
-              column_id: backlogColumn.id,
-              content_id: context.issue.node_id,
-              content_type: 'Issue'
-            });
-
-            core.info(`Moved issue #${issue_number} to column ${column_name}`);
+      - name: move-unassigned-issue-to-backlog-column
+        uses: takanabe/github-actions-automate-projects@v0.0.2
+        if: github.event_name == 'issues' && github.event.action == 'unassigned'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_PROJECT_URL: https://github.com/orgs/enBloc-org/projects/6/
+          GITHUB_PROJECT_COLUMN_NAME: Backlog
