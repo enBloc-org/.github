@@ -1,6 +1,5 @@
 name: new issue
 description: Create a new standard issue for the backlog.
-title:
 
 body:
     - type: textarea
