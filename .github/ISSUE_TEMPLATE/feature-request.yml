@@ -1,0 +1,26 @@
+name: feature request
+description: Request a new Feature you would like to see in Kindly.
+labels: ["🍎 core team", "📚 spike"]
+
+body:
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: Please guarantee that you have followed these steps as they help us triage new Feature requests for what should be added to the backlog.
+      options:
+        - label: I have checked the existing Issues for a duplicate of this Feature
+          required: true
+        - label: I have checked the roadmap in the documentation and did not find this Feature there
+          required: true
+        - label: The feature I'm requesting has come from direct user feedback (mine or someone elses)
+          required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: Explain in a few lines how the user would expect to interact with this new feature.
+      placeholder: "i.e.: when the user ... they should be able to ... so that ..."
+    validations:
+      required: true
