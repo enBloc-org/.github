@@ -2,6 +2,19 @@ name: new issue
 description: Create a new standard issue for the backlog.
 
 body:
+    - type: checkboxes
+      id: prerequisites
+      attributes:
+        label: Prerequisites
+        description: Please guarantee that you have followed these steps as they help us triage new Issues for the backlog
+        options:
+          - label: I have checked the existing Issues for a duplicate of this ticket
+            required: true
+          - label: I have checked the roadmap in the documentation and am convinced this Issue fits the plans for future releases
+            required: true
+          - label: This Issue will help us achieve at least one of the existing User Stories for the product (directly or indirectly)
+            required: true
+
     - type: textarea
       id: expected
       attributes:
