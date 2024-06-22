@@ -1,18 +1,18 @@
-name: Move assigned Issues to the In Progress column
-
-on: 
+name: Move new issues into Project Boards
+on:
   issues:
     types: [assigned]
-
 jobs:
-  mark-assigned-issues-inprogress:
+  move-issue-to-repository-project-column:
+    name: Move issues to repository project column
     runs-on: ubuntu-latest
-
     steps:
-      - name: move-assigned-issue-to-in_progress-column
-        uses: takanabe/github-actions-automate-projects@v0.0.2
-        if: github.event_name == 'issues' && github.event.action == 'assigned'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_PROJECT_URL: https://github.com/orgs/enBloc-org/projects/6/
-          GITHUB_PROJECT_COLUMN_NAME: In Progress
+      - name: Move issue to 'To do' column if body has a mark 'issue:todo'
+        uses: fojia/action-move-issues-to-column@master
+        with:
+          project: "test_project"
+          column: "In Progress"
+          owner: "camelPhonso"
+          repo: ".github"
+          type: "org"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
