@@ -13,5 +13,6 @@ jobs:
           project: "test_project"
           column: "Backlog"
           owner: "enBloc-org"
+          repo: "projects"
           type: "repo"
           github_token: ${{ secrets.GITHUB_TOKEN }}
