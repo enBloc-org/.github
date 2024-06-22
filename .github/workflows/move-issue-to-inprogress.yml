@@ -1,4 +1,4 @@
-name: Move new issues into Project Boards
+name: Move new issues into in progress
 on:
   issues:
     types: [assigned]
@@ -7,7 +7,7 @@ jobs:
     name: Move issues to repository project column
     runs-on: ubuntu-latest
     steps:
-      - name: Move issue to 'To do' column if body has a mark 'issue:todo'
+      - name: Move issue to 'In Progress'
         uses: fojia/action-move-issues-to-column@master
         with:
           project: "test_project"
