@@ -14,5 +14,5 @@ jobs:
           column: "In Progress"
           owner: "camelPhonso"
           repo: ".github"
-          type: "org"
+          type: "repo"
           github_token: ${{ secrets.GITHUB_TOKEN }}
