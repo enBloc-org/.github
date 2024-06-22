@@ -10,7 +10,7 @@ jobs:
       - name: Move issue to 'Backlog'
         uses: fojia/action-move-issues-to-column@master
         with:
-          project: "test_project"
+          project: "7"
           column: "Backlog"
           owner: "enBloc-org"
           repo: ".github"

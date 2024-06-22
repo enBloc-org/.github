@@ -10,7 +10,7 @@ jobs:
       - name: Move issue to 'In Progress'
         uses: fojia/action-move-issues-to-column@master
         with:
-          project: "test_project"
+          project: "7"
           column: "In Progress"
           owner: "enBloc-org"
           repo: ".github"
