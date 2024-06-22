@@ -14,5 +14,5 @@ jobs:
         if: github.event_name == 'issues' && github.event.action == 'unassigned'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_PROJECT_URL: https://github.com/enBloc-org/.github/projects/6
+          GITHUB_PROJECT_URL: https://github.com/orgs/enBloc-org/projects/6/
           GITHUB_PROJECT_COLUMN_NAME: Backlog
