@@ -1,0 +1,41 @@
+name: new issue
+description: Create a new standard issue for the backlog.
+title:
+
+body:
+    - type: textarea
+      id: expected
+      attributes:
+          label: Expected Behavior
+          description: Explain in a few lines how the code should be behaving once this issue is closed.
+          placeholder: The codebase should ...
+      validations:
+          required: true
+
+    - type: textarea
+      id: actual
+      attributes:
+          label: Current Behavior
+          description: Show us how the code is behaving right now instead.
+          placeholder: Right now, what happens is ...
+      validations:
+          required: true
+
+    - type: textarea
+      id: aon
+      attributes:
+          label: Any other notes
+          description: Share any other relevant notes on this Issue.
+          placeholder: It's important to make note that ...
+      validations:
+          required: false
+    
+    - type: dropdown
+      id: self-assign
+      attributes:
+        label: Assignment
+        description: Let us know if you would like to be assigned this Issue
+        options:
+          - This issue is free for anyone to take
+          - I'd like to work on this Issue myself
+        default: 0
