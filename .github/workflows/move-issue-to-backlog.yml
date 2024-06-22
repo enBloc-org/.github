@@ -1,6 +1,6 @@
 name: Move unassigned Issues to the Backlog
 
-on:
+on: 
   issues:
     types: [unassigned]
 
@@ -16,12 +16,12 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const issue_number = context.issue.number;
-            const project_url = 'https://api.github.com/repos/enBloc-org/test_project/issues/' + issue_number + '/events';
+            const project_id = 6; // Replace with your actual project ID
             const column_name = 'Backlog';
 
-            // Get the project column ID
-            const projectColumns = await github.projects.listColumns({
-              project_id: 6
+            // Get the project columns
+            const projectColumns = await github.rest.projects.listColumns({
+              project_id: project_id
             });
 
             const backlogColumn = projectColumns.data.find(column => column.name === column_name);
@@ -30,7 +30,7 @@ jobs:
             }
 
             // Add the issue to the project column
-            await github.projects.createCard({
+            await github.rest.projects.createCard({
               column_id: backlogColumn.id,
               content_id: context.issue.node_id,
               content_type: 'Issue'
