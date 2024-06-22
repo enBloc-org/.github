@@ -12,7 +12,7 @@ jobs:
         with:
           project: "test_project"
           column: "In Progress"
-          owner: "camelPhonso"
+          owner: "enBloc-org"
           repo: ".github"
           type: "repo"
           github_token: ${{ secrets.GITHUB_TOKEN }}
