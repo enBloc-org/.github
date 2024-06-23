@@ -1,4 +1,4 @@
-name: Move new issues into in progress
+name: Move new issues into In Progress
 on:
   issues:
     types: [assigned]
@@ -8,11 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Move issue to 'In Progress'
-        uses: fojia/action-move-issues-to-column@master
+        uses: kin/gh-action-move-issues-to-column@v1.0
         with:
-          project: "7"
-          column: "In Progress"
-          owner: "enBloc-org"
-          repo: ".github"
-          type: "org"
-          github_token: ${{ secrets.GA_ACCESS_TOKEN}}
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          project-name: "test_project"
+          target-column: "In Progress"
