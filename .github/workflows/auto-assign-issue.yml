@@ -29,10 +29,10 @@ jobs:
 
       - name: Post a comment
         if: env.self-assigned == 'true'
-        uses: actions/github-script@v7
+        uses: actions-ecosystem/action-create-comment@v1
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          body: |
             github.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
