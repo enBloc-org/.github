@@ -3,22 +3,15 @@ description: Create a new issue to report a bug found in the codebase.
 labels: ["🪲 bug"]
 
 body:
-  - type: checkboxes
-    id: pre-requisites
+  - type: markdown
     attributes:
-      label: Pre-requisites
-      description: |
-        Make sure you have followed these steps before submitting a bug report!
-        Bug reports will be closed if any of these steps have not been followed ⛔️
-      options:
-        - label: I have pulled the latest changes from the Origin
-          required: true
-        - label: I have made sure to update my environment by running `npm install` on my terminal
-          required: true
-        - label: I have tried to identify the source of the problem before submitting a report
-          required: true
-        - label: I have searched the existing Issues for any duplicates of this Bug report
-          required: true
+      value: |
+        ## Prerequisites
+        Please guarantee that you have followed these steps before submitting a bug report as this will help us triage existing problems.
+
+        - [] I have pulled the latest changes from the Origin
+        - [] I have made sure to update my environment by removing `node_modules` and running `npm install`
+        - [] I have searched the existing Issues for any duplicates of this Bug report
 
   - type: textarea
     id: summary
