@@ -9,9 +9,9 @@ body:
         ## Prerequisites
         Please guarantee that you have followed these steps as they help us triage new Feature requests for what needs to be added to the backlog.
 
-        - [ ] I have checked the existing Issues for a duplicate of this Feature
-        - [ ] I have checked the roadmap in the documentation and did not find this Feature there
-        - [ ] The Feature I'm requesting has come from direct user feedback (mine or someone elses)
+        - [ x ] I have checked the existing Issues for a duplicate of this Feature
+        - [ x ] I have checked the roadmap in the documentation and did not find this Feature there
+        - [ x ] The Feature I'm requesting has come from direct user feedback (mine or someone elses)
 
   - type: textarea
     id: expected
