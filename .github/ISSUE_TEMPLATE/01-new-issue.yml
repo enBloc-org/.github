@@ -8,9 +8,9 @@ body:
         ## Prerequisites
         Please guarantee that you have completed the following steps as this helps us manage the number of Issues in our backlog.
 
-        - [ X ] I have checked the existing Issues for a duplicate of this ticket
-        - [ X ] I have checked the roadmap in the documentation and am convinced this Issue fits the plans for future releases
-        - [ X ] This Issue will help us achieve at least one of the existing User Stories for the product (directly or indirectly)
+        - [x] I have checked the existing Issues for a duplicate of this ticket
+        - [x] I have checked the roadmap in the documentation and am convinced this Issue fits the plans for future releases
+        - [x] This Issue will help us achieve at least one of the existing User Stories for the product (directly or indirectly)
 
   - type: textarea
     id: expected

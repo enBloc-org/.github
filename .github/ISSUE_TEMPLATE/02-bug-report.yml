@@ -9,9 +9,9 @@ body:
         ## Prerequisites
         Please guarantee that you have followed these steps before submitting a bug report as this will help us triage existing problems.
 
-        - [ X ] I have pulled the latest changes from the Origin
-        - [ X ] I have made sure to update my environment by removing `node_modules` and running `npm install`
-        - [ X ] I have searched the existing Issues for any duplicates of this Bug report
+        - [x] I have pulled the latest changes from the Origin
+        - [x] I have made sure to update my environment by removing `node_modules` and running `npm install`
+        - [x] I have searched the existing Issues for any duplicates of this Bug report
 
   - type: textarea
     id: summary
