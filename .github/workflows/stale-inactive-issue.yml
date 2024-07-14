@@ -28,8 +28,8 @@ jobs:
             🔎 The Issue will be automaticaly unassigned and moved to the Backlog if it doesn't receive new activity in the next 7 days.
 
             💡 To unstale this Issue please push any commits that are ready or provide an update in the comments.
-          days-before-issue-stale: 7
-          
+          days-before-issue-stale: 1
+
           # stale pull requests
           stale-pr-message: |
             🤖 meep morp! 
@@ -37,4 +37,4 @@ jobs:
             This PR is now marked as stale because there has been no activity for a while.
 
             💡 Please guarantee this is still a relevant PR.
-          days-before-pr-stale: 7
+          days-before-pr-stale: 1
