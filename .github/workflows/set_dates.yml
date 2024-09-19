@@ -1,0 +1,32 @@
+name: Set Issue Dates
+
+on:
+  issues:
+    types: 
+      - assigned
+      - closed
+
+jobs:
+  set-dates:
+    runs-on: ubuntu-latest
+    steps:
+    
+    # Step to set the start date when the issue is assigned
+    - name: Set start date on issue assignment
+      if: github.event.action == 'assigned'
+      run: |
+        curl -X PATCH \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github+json" \
+          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }} \
+          -d '{"labels": ["start_date:'$(date +%Y-%m-%d)'"]}'
+          
+    # Step to set the end date when the issue is closed
+    - name: Set end date on issue closure
+      if: github.event.action == 'closed'
+      run: |
+        curl -X PATCH \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github+json" \
+          https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.issue.number }} \
+          -d '{"labels": ["end_date:'$(date +%Y-%m-%d)'"]}'
