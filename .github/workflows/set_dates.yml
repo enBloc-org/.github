@@ -17,7 +17,7 @@ jobs:
         curl -X POST \
           -H "Authorization: bearer ${{ secrets.GITHUB_TOKEN }}" \
           -H "Content-Type: application/json" \
-          -d '{"query":"mutation { updateProjectV2ItemFieldValue(input: {projectId: "PVT_kwDOCTFmOs4AjsPo", itemId: \"${{ github.event.issue.node_id }}\", fieldId: "PVTF_lADOCTFmOs4AjsPozgf_NLI", value: { text: \"'$(date +%Y-%m-%d)'\" }}) { projectV2Item { id }}}"}' \
+          -d '{"query":"mutation { updateProjectV2ItemFieldValue(input: {projectId: \"PVT_kwDOCTFmOs4AjsPo\", itemId: \"${{ github.event.issue.node_id }}\", fieldId: \"PVTF_lADOCTFmOs4AjsPozgf_NLI\", value: { text: \"'$(date +%Y-%m-%d)'\" }}) { projectV2Item { id }}}"}' \
           https://api.github.com/graphql
 
     - name: Update project end date
@@ -26,5 +26,5 @@ jobs:
         curl -X POST \
           -H "Authorization: bearer ${{ secrets.GITHUB_TOKEN }}" \
           -H "Content-Type: application/json" \
-          -d '{"query":"mutation { updateProjectV2ItemFieldValue(input: {projectId: "PVT_kwDOCTFmOs4AjsPo", itemId: \"${{ github.event.issue.node_id }}\", fieldId: "PVTF_lADOCTFmOs4AjsPozgf_NNw", value: { text: \"'$(date +%Y-%m-%d)'\" }}) { projectV2Item { id }}}"}' \
+          -d '{"query":"mutation { updateProjectV2ItemFieldValue(input: {projectId: \"PVT_kwDOCTFmOs4AjsPo\", itemId: \"${{ github.event.issue.node_id }}\", fieldId: \"PVTF_lADOCTFmOs4AjsPozgf_NNw\", value: { text: \"'$(date +%Y-%m-%d)'\" }}) { projectV2Item { id }}}"}' \
           https://api.github.com/graphql
