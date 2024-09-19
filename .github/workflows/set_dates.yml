@@ -5,6 +5,11 @@ on:
     types:
       - assigned
       - closed
+      
+permissions:
+  contents: read
+  issues: write
+  projects: write
 
 jobs:
   update-date:
